@@ -1,0 +1,138 @@
+*{margin: 0; padding: 0;}
+
+body{
+    
+    background-image: url(Images/1.jpg);
+    background-position: center center;
+    background: #4761aa;
+    color: #000103;
+}
+
+#contenedor 
+{
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+
+    display: grid;
+    /*grid: gap 20px;*/
+
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+
+    /*
+    grid-template-areas:
+    "header header header"
+    "contenido contenido sidebar"
+    "widget-1 widget-2 sidebar"
+    "footer footer footer"
+    */
+}
+
+.bordes{
+
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    
+}
+
+#header
+{
+    background: #5f0000;
+    color: #fff;
+    /*grid-area: header;*/
+    grid-column-start: 1;
+    grid-column-end: 4;
+    text-align: center;
+}
+
+#contenido
+{
+    /*grid-area: contenido;*/
+    grid-column: span 2;
+    text-align: center;
+
+}
+
+#sidebar
+{
+    grid-column: 3 / 4;
+    background: #faa53d;
+    text-align: center;
+    /*display: flex;*/
+    align-items: center;
+    /*justify-content: center;*/
+    grid-row: 2 / 4;
+}
+
+/*
+#widget-1{
+    grid-area: widget-1;
+}
+
+#widget-2{
+    grid-area: widget-2;
+}
+*/
+
+.wid{
+    background: #000000;
+    color: #fff;
+    height: 100px;
+    text-align: center;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+}
+
+#footer
+{
+    background: #5f0000;
+    color: #fff;
+    grid-column: span 3;
+    text-align: center;
+}
+
+/*-------------------------------------------@media---------------------------------------------------------------*/
+
+@media screen and (max-width: 768px) {
+    
+    /*
+    #contenedor
+    {
+        grid-template-areas: "header header header"
+                             "sidebar sidebar sidebar"   
+                             "widger-1 widget-1 widget-2"
+                             "footer footer footer";
+
+
+    }
+    */
+
+    #contenedor
+    {
+        grid-column: 1 / -1;
+
+    }
+
+    #sidebar
+    {
+        grid-column: span 3;
+    }
+
+    .wid{
+        grid-column: span 3;
+    }
+
+    #footer{
+        grid-column: span 3;
+    }
+
+
+
+
+} 
